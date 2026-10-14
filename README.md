@@ -33,14 +33,6 @@ All failure rates are illustrative assumptions (see
 
 
 
-## Usage
-
-```bash
-pip install -r requirements.txt
-python main.py     # prints FMEA report, probability tables, propagation traces, saves reliability.png
-pytest              # analytical vs Monte Carlo cross-checks, architecture ordering
-```
-
 ## Limitations
 
 - Constant failure rate (exponential) model only — no wear-out/bathtub curve
