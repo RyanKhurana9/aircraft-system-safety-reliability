@@ -31,3 +31,36 @@ All failure rates are illustrative assumptions (see
   (or is contained) through relays/redundancy/battery
 
 ## Structure
+src/
+├── components/ # Component dataclass + CSV loader
+├── fmea/ # FMEA dataset, RPN, report generation
+├── fault_tree/ # Generic AND/OR tree engine
+├── reliability/ # Analytical (closed-form) + Monte Carlo
+└── system/ # The three architectures + propagation logic
+data/component_parameters.csv
+tests/
+main.py
+
+
+
+
+## Usage
+
+```bash
+pip install -r requirements.txt
+python main.py     # prints FMEA report, probability tables, propagation traces, saves reliability.png
+pytest              # analytical vs Monte Carlo cross-checks, architecture ordering
+```
+
+## Limitations
+
+- Constant failure rate (exponential) model only — no wear-out/bathtub curve
+- Assumes component failures are independent; no common-cause failure modelling
+- Battery modelled as binary healthy/not — no finite endurance window
+- Example failure rates, not validated against real aircraft data
+
+## Possible extensions
+
+- Common-cause failure groups (e.g. shared bus fault)
+- Battery endurance / time-limited backup
+- Repairable components (MTTR, availability instead of pure reliability)
