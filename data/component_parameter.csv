@@ -1,0 +1,11 @@
+name,failure_rate
+Generator_A,1e-4
+Generator_B,1e-4
+Relay_A,2e-5
+Relay_B,2e-5
+Bus_A,1e-5
+Bus_B,1e-5
+Battery,5e-5
+Controller,3e-5
+Sensor_A,5e-5
+Sensor_B,5e-5
